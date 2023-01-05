@@ -9,7 +9,10 @@ import androidx.room.TypeConverters
 import com.example.newsapp.models.Article
 
 
-@Database(entities = [Article::class], version = 2, exportSchema = false, autoMigrations = [AutoMigration (from = 1, to = 2)])
+@Database(
+    entities = [Article::class],
+    version = 1,
+)
 @TypeConverters(Converters::class)
 abstract class ArticleDatabase() : RoomDatabase() {
 
@@ -27,7 +30,9 @@ abstract class ArticleDatabase() : RoomDatabase() {
                     context.applicationContext,
                     ArticleDatabase::class.java,
                     "article_db"
-                ).build()
+                )
+                    .fallbackToDestructiveMigration()
+                    .build()
 
                 INSTANCE = instance
                 return instance
@@ -36,21 +41,4 @@ abstract class ArticleDatabase() : RoomDatabase() {
     }
 
 
-
-    /*companion object {
-        @Volatile
-        private var instance: ArticleDatabase? = null
-        private val LOCK = Any()
-
-        operator fun invoke(context: Context) = instance ?: synchronized(LOCK) {
-            instance ?: this.createDatabase(context).also { instance = it }
-        }
-
-        private fun createDatabase(context: Context) =
-            Room.databaseBuilder(
-                context.applicationContext,
-                ArticleDatabase::class.java,
-                "article_db.db"
-            ).build()
-    }*/
 }
