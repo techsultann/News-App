@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/ic_person"
+        android:title="profile"/>
+
+    <group android:id="@+id/secondary">
+
+        <item
+            android:id="@+id/lists"
+            android:icon="@drawable/ic_notes"
+            android:title="Note"/>
+        <item
+            android:id="@+id/topics"
+            android:icon="@drawable/ic_topic"
+            android:title="Topics"/>
+
+    </group>
+
+    <item
+        android:id="@+id/settingsFragment"
+        android:icon="@drawable/ic_settings"
+        android:title="Settings"/>
+
+
+</menu>

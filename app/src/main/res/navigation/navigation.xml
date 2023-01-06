@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/news_nav_graph"
     app:startDestination="@id/breakingNewsFragment">
     <fragment
         android:id="@+id/articleFragment"
         android:name="com.example.newsapp.ui.ArticleFragment"
-        android:label="ArticleFragment" >
+        android:label="@string/article">
         <argument
             android:name="article"
             app:argType="com.example.newsapp.models.Article" />
@@ -14,38 +15,46 @@
     <fragment
         android:id="@+id/breakingNewsFragment"
         android:name="com.example.newsapp.ui.BreakingNewsFragment"
-        android:label="BreakingNewsFragment"
-        >
+        android:label="@string/breaking_news">
         <action
             android:id="@+id/action_breakingNewsFragment_to_articleFragment"
             app:destination="@id/articleFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_left"/>
+            app:popExitAnim="@anim/slide_out_left" />
     </fragment>
     <fragment
         android:id="@+id/savedNewsFragment"
         android:name="com.example.newsapp.ui.SavedNewsFragment"
-        android:label="SavedNewsFragment" >
+        android:label="@string/saved_news">
         <action
             android:id="@+id/action_savedNewsFragment_to_articleFragment"
             app:destination="@id/articleFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_left"/>
+            app:popExitAnim="@anim/slide_out_left" />
     </fragment>
     <fragment
         android:id="@+id/searchNewsFragment"
         android:name="com.example.newsapp.ui.SearchNewsFragment"
-        android:label="SearchNewsFragment" >
+        android:label="@string/search_news">
         <action
             android:id="@+id/action_searchNewsFragment_to_articleFragment"
             app:destination="@id/articleFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_left"/>
+            app:popExitAnim="@anim/slide_out_left" />
     </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.newsapp.SettingsFragment"
+        android:label="SettingsFragment" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.newsapp.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>
